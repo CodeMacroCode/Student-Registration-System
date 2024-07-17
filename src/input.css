@@ -3,7 +3,4 @@
 @tailwind utilities;
 
 @layer{
-    .registration-input:focus {
-        border: none;
-    }
 }

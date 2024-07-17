@@ -27,18 +27,33 @@
         </nav>
         <form class="flex flex-col">
             <label for="full-name">Student Name</label>
-            <input class="text-black mb-4 h-10 p-2" id="full-name" type="text" placeholder="Full Name" required>
+            <input class="text-black mb-4 h-10 p-2 focus:outline-none" id="full-name" type="text" placeholder="Full Name" required>
+            <div id="gender" class="mb-4">
+                <h3>Gender</h3>
+                <ul>
+                    <li>
+                        <input type="radio" value="Male" name="gender" id="gender-male">
+                        <label for="gender-male">Male</label>
+                    </li>
+                    <li>
+                        <input type="radio" value="Female" name="gender" id="gender-female">
+                        <label for="gender-female">Female</label>
+                    </li>
+                </ul>
+            </div>
             <label for="student-id">Student ID</label>
-            <input class="text-black mb-4 h-10 p-2" type="number" id="student-id" placeholder="Student ID" required>
+            <input class="text-black mb-4 h-10 p-2 focus:outline-none" type="number" id="student-id" placeholder="Student ID" required>
             <label for="class">Class</label>
-            <input class="text-black mb-4 h-10 p-2" type="text" id="class" placeholder="Class" required>
+            <input class="text-black mb-4 h-10 p-2 focus:outline-none" type="text" id="class" placeholder="Class" required>
             <label for="roll-no">Student Roll No.</label>
-            <input class="text-black mb-4 h-10 p-2" type="text" id="roll-no" placeholder="Roll No." required>
+            <input class="text-black mb-4 h-10 p-2 focus:outline-none" type="text" id="roll-no" placeholder="Roll No." required>
             <label for="contact-no">Student Contact Number</label>
-            <input class="text-black mb-4 h-10 p-2" type="number" id="contact-no" placeholder="Contact Number" required>
+            <input class="text-black mb-4 h-10 p-2 focus:outline-none" type="number" id="contact-no" placeholder="Contact Number" required>
             <label for="email">Student Email ID</label>
-            <input class="text-black h-10 p-2" type="email" id="class" placeholder="Email ID" required>
+            <input class="text-black mb-4 h-10 p-2 focus:outline-none" type="email" id="class" placeholder="Email ID" required>
+            <input type="submit" class="w-20 self-center hover:bg-slate-900 p-2 rounded-md text-gray-400 focus:text-white">
         </form>
     </main>
+    <script src="script.js"></script>
 </body>
 </html>

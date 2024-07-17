@@ -5,6 +5,10 @@
 @layer{
     .underline {
         text-decoration-line: underline;
-        text-underline-offset: 16px;
+        text-underline-offset: 13px;
+    }
+
+    tbody td{
+        text-align: center;
     }
 }

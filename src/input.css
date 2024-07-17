@@ -3,4 +3,8 @@
 @tailwind utilities;
 
 @layer{
+    .underline {
+        text-decoration-line: underline;
+        text-underline-offset: 16px;
+    }
 }

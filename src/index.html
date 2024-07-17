@@ -16,16 +16,16 @@
     </header>
     <main class="mt-20 w-2/3 ml-auto mr-auto">
         <nav class="flex">
-            <button id="student-registration" class="mr-4 flex text-gray-400 focus:text-white hover:bg-slate-900 p-2 rounded-md">
+            <button id="student-registration" class="underline mr-4 flex text-gray-400 focus:text-white hover:bg-slate-900 rounded-md p-2 transition duration-300">
                 <img src="assets/registration.png" alt="Registration form" class="invert size-6 mr-1">
                 Student Registration
             </button>
-            <button id="student-details" class="flex hover:bg-slate-900 p-2 rounded-md text-gray-400 focus:text-white">
+            <button id="student-details" class="flex hover:bg-slate-900 p-2 rounded-md text-gray-400 focus:text-white transition duration-300">
                 <img src="assets/sheet.png" alt="Student details" class="invert size-6 mr-1">
                 Student Details
             </button>
         </nav>
-        <form class="flex flex-col">
+        <form class="flex flex-col mt-5">
             <label for="full-name">Student Name</label>
             <input class="text-black mb-4 h-10 p-2 focus:outline-none" id="full-name" type="text" placeholder="Full Name" required>
             <div id="gender" class="mb-4">
@@ -51,8 +51,9 @@
             <input class="text-black mb-4 h-10 p-2 focus:outline-none" type="number" id="contact-no" placeholder="Contact Number" required>
             <label for="email">Student Email ID</label>
             <input class="text-black mb-4 h-10 p-2 focus:outline-none" type="email" id="class" placeholder="Email ID" required>
-            <input type="submit" class="w-20 self-center hover:bg-slate-900 p-2 rounded-md text-gray-400 focus:text-white">
+            <button id="submit-btn" type="submit" class="w-20 self-center hover:bg-slate-900 p-2 rounded-md text-gray-400 focus:text-white">Submit</button>
         </form>
+        
     </main>
     <script src="script.js"></script>
 </body>

@@ -50,6 +50,8 @@ function addStudent(name, gender, studentID, studentClass, rollNo, contact, emai
     const cell5 = newRow.insertCell(4);
     const cell6 = newRow.insertCell(5);
     const cell7 = newRow.insertCell(6);
+    const cell8 = newRow.insertCell(7);
+    const cell9 = newRow.insertCell(8);
 
     cell1.innerText = name;
     cell2.innerText = gender;
@@ -58,4 +60,15 @@ function addStudent(name, gender, studentID, studentClass, rollNo, contact, emai
     cell5.innerText = rollNo;
     cell6.innerText = contact;
     cell7.innerText = email;
+
+    const editButton = document.createElement("button");
+    editButton.innerText = "Edit";
+    editButton.onclick = ()=> editStudent(newRow);
+
+    const deleteButton = document.createElement("button");
+    editButton.innerText = "Delete";
+    deleteButton.onclick = ()=> deleteStudent(newRow);
+
+    cell8.appendChild(editButton); 
+    // cell9.appendChild(deleteButton);
 }

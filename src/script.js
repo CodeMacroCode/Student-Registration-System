@@ -14,7 +14,6 @@ detailsBtn.addEventListener("click", function() {
     detailsBtn.classList.add("underline");
     registrationBtn.classList.remove("underline");
     tableContainer.style.display = "block";
-
 });
 
 registrationBtn.addEventListener("click", function() {
@@ -51,7 +50,6 @@ function addStudent(name, gender, studentID, studentClass, rollNo, contact, emai
     const cell6 = newRow.insertCell(5);
     const cell7 = newRow.insertCell(6);
     const cell8 = newRow.insertCell(7);
-    const cell9 = newRow.insertCell(8);
 
     cell1.innerText = name;
     cell2.innerText = gender;
@@ -61,14 +59,43 @@ function addStudent(name, gender, studentID, studentClass, rollNo, contact, emai
     cell6.innerText = contact;
     cell7.innerText = email;
 
+    // Edit Button
     const editButton = document.createElement("button");
     editButton.innerText = "Edit";
-    editButton.onclick = ()=> editStudent(newRow);
+    editButton.addEventListener("click", ()=> editStudent(newRow));
 
+    // Delete Button
     const deleteButton = document.createElement("button");
-    editButton.innerText = "Delete";
-    deleteButton.onclick = ()=> deleteStudent(newRow);
+    deleteButton.innerText = "Delete";
+    deleteButton.addEventListener("click", ()=> deleteStudent(newRow));
 
     cell8.appendChild(editButton); 
-    // cell9.appendChild(deleteButton);
+    cell8.appendChild(deleteButton);
+
+    editButton.style.marginRight = "5px";
+}
+
+function editStudent(row) {
+    const cells = row.getElementsByTagName('td');
+    const name = prompt("Enter new Name", cells[0].innerText);
+    const gender = prompt("Enter new gender (Male/Female)", cells[1].innerText);
+    const studentID = prompt("Enter new Student ID", cells[2].innerText);
+    const studentClass = prompt("Enter new class", cells[3].innerText);
+    const rollNo = prompt("Enter new Roll no.", cells[4].innerText);
+    const contact = prompt("Enter new Contact", cells[5].innerText);
+    const email = prompt("Enter new Email", cells[6].innerText);
+
+    if(name && gender && studentID && studentClass && rollNo && contact && email) {
+        cells[0].innerText = name;
+        cells[1].innerText = gender;
+        cells[2].innerText = studentID;
+        cells[3].innerText = studentClass;
+        cells[4].innerText = rollNo;
+        cells[5].innerText = contact;
+        cells[6].innerText = email;
+    }
+}
+
+function deleteStudent(row) {
+    table.deleteRow(row.rowIndex - 1);
 }

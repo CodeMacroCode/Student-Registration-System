@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/output.css">
+    <title>Student Registration Form</title>
+</head>
+<body class="bg-slate-950 text-white w-full">
+    <!-- Header of the web page -->
+    <header>
+        <h1 class="font-extrabold text-4xl text-center mt-10">Student Registration System</h1>
+        <article id="description" class="ml-auto mr-auto mt-10 w-3/4 text-center">
+                The Student Registration System is designed to streamline the process of student enrollment and management. 
+                It allows admin to register new students by entering personal details such as name, date of birth, student ID, roll no. and contact information.
+        </article>
+    </header>
+    <!-- this is the main section of the page -->
+    <section class="mt-20 w-2/3 ml-auto mr-auto">
+        <!-- navigation bar for registration and to see the students details -->
+        <nav class="flex">
+            <button id="student-registration" class="underline mr-4 flex text-gray-400 focus:text-white hover:bg-slate-900 rounded-md p-2 transition duration-300">
+                <img src="src/assets/registration.png" alt="Registration form" class="invert size-6 mr-1">
+                Student Registration
+            </button>
+            <button id="student-details" class="flex hover:bg-slate-900 p-2 rounded-md text-gray-400 focus:text-white transition duration-300">
+                <img src="src/assets/sheet.png" alt="Student details" class="invert size-6 mr-1">
+                Student Details
+            </button>
+        </nav>
+        <!-- Form for filling up the students details -->
+        <form class="flex flex-col mt-5">
+            <label for="student-name">Student Name</label>
+            <input class="text-black mb-4 h-10 p-2 focus:outline-none" id="student-name" type="text" placeholder="Full Name" required>
+            <div id="gender" class="mb-4">
+                <h3>Gender</h3>
+                <ul>
+                    <li>
+                        <input type="radio" value="Male" name="gender" id="gender-male" required>
+                        <label for="gender-male">Male</label>
+                    </li>
+                    <li>
+                        <input type="radio" value="Female" name="gender" id="gender-female" required>
+                        <label for="gender-female">Female</label>
+                    </li>
+                </ul>
+            </div>
+            <label for="student-id">Student ID</label>
+            <input class="text-black mb-4 h-10 p-2 focus:outline-none" name="student-id" type="number" id="student-id" placeholder="Student ID" required>
+            <label for="class">Class</label>
+            <input class="text-black mb-4 h-10 p-2 focus:outline-none" name="class" type="text" id="class" placeholder="Class" required>
+            <label for="roll-no">Student Roll No.</label>
+            <input class="text-black mb-4 h-10 p-2 focus:outline-none" name="roll-no" type="text" id="roll-no" placeholder="Roll No." required>
+            <label for="contact-no">Student Contact Number</label>
+            <input class="text-black mb-4 h-10 p-2 focus:outline-none" name="contact" type="number" id="contact-no" placeholder="Contact Number" required>
+            <label for="email">Student Email ID</label>
+            <input class="text-black mb-4 h-10 p-2 focus:outline-none" name="email" type="email" id="email" placeholder="Email ID" required>
+            <button id="submit-btn" type="submit" class="w-20 self-center hover:bg-slate-900 p-2 rounded-md text-gray-400 focus:text-white">Submit</button>
+        </form>
+    </section>
+    <!-- Table for student details -->
+    <section id="table-container" class="max-h-screen overflow-y-auto">
+        <table id="table" class="mr-auto ml-auto w-2/3 border-collapse">
+            <thead>
+                <tr class="border-t-2 border-b-2 border-white border-opacity-25">
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>ID</th>
+                    <th>Class</th>
+                    <th>Roll No.</th>
+                    <th>Contact No.</th>
+                    <th>Email ID</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </section>
+    <script src="src/script.js"></script>
+</body>
+</html>

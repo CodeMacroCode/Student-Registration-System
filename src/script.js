@@ -33,6 +33,12 @@ form.addEventListener("submit", function(e) {
     const contact = document.getElementById('contact-no').value;
     const email = document.getElementById('email').value;
 
+    // validate if there are any digits in the name.
+    if(/\d/.test(name)) {
+        alert("Name should not contain any numbers.")
+        return;
+    }
+
     const key = 'student_' + Date.now(); // generates a random unique key for each student.
     addStudent(key, name, gender, studentID, studentClass, rollNo, contact, email);
 
@@ -103,6 +109,12 @@ function editStudent(row, key) {
     const contact = prompt("Enter new Contact", cells[5].innerText);
     const email = prompt("Enter new Email", cells[6].innerText);
     
+    // validate if there are any digits in the name.
+    if(/\d/.test(name)) {
+        alert("Name should not contain any numbers.")
+        return;
+    }
+    
     // To make sure cells are not is empty.
     if(name && gender && studentID && studentClass && rollNo && contact && email) {
         cells[0].innerText = name;
@@ -136,7 +148,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // retrieve student data from localStorage and add back to the table.
     for (let i = 0; i < localStorage.length; i++) {
         const key = localStorage.key(i);
-        const student = JSON.parse(localStorage.getItem(key));
+        const student 
+        = JSON.parse(localStorage.getItem(key));
         addStudent(key, student.name, student.gender, student.studentID, student.studentClass, student.rollNo, student.contact, student.email);
     }
 });

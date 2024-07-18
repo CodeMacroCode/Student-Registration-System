@@ -7,6 +7,7 @@
     <title>Student Registration Form</title>
 </head>
 <body class="bg-slate-950 text-white w-full">
+    <!-- Header of the web page -->
     <header>
         <h1 class="font-extrabold text-4xl text-center mt-10">Student Registration System</h1>
         <article id="description" class="ml-auto mr-auto mt-10 w-3/4 text-center">
@@ -14,7 +15,9 @@
                 It allows admin to register new students by entering personal details such as name, date of birth, student ID, roll no. and contact information.
         </article>
     </header>
+    <!-- this is the main section of the page -->
     <section class="mt-20 w-2/3 ml-auto mr-auto">
+        <!-- navigation bar for registration and to see the students details -->
         <nav class="flex">
             <button id="student-registration" class="underline mr-4 flex text-gray-400 focus:text-white hover:bg-slate-900 rounded-md p-2 transition duration-300">
                 <img src="assets/registration.png" alt="Registration form" class="invert size-6 mr-1">
@@ -25,6 +28,7 @@
                 Student Details
             </button>
         </nav>
+        <!-- Form for filling up the students details -->
         <form class="flex flex-col mt-5">
             <label for="student-name">Student Name</label>
             <input class="text-black mb-4 h-10 p-2 focus:outline-none" id="student-name" type="text" placeholder="Full Name" required>
@@ -54,6 +58,7 @@
             <button id="submit-btn" type="submit" class="w-20 self-center hover:bg-slate-900 p-2 rounded-md text-gray-400 focus:text-white">Submit</button>
         </form>
     </section>
+    <!-- Table for student details -->
     <section id="table-container">
         <table id="table" class="mr-auto ml-auto w-2/3">
             <thead>

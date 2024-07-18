@@ -710,15 +710,13 @@ video {
   transition-duration: 300ms;
 }
 
-@layer{
-  .underline {
-    text-decoration-line: underline;
-    text-underline-offset: 13px;
-  }
+.underline {
+  text-decoration-line: underline;
+  text-underline-offset: 13px;
+}
 
-  tbody td{
-    text-align: center;
-  }
+tbody td{
+  text-align: center;
 }
 
 .hover\:bg-slate-900:hover {

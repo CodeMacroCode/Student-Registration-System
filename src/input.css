@@ -2,13 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer{
-    .underline {
-        text-decoration-line: underline;
-        text-underline-offset: 13px;
-    }
-
-    tbody td{
-        text-align: center;
-    }
+.underline {
+    text-decoration-line: underline;
+    text-underline-offset: 13px;
+}
+tbody td{
+    text-align: center;
 }

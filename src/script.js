@@ -33,9 +33,14 @@ form.addEventListener("submit", function(e) {
     const contact = document.getElementById('contact-no').value;
     const email = document.getElementById('email').value;
 
-    // validate if there are any digits in the name.
+    // validation checks.
     if(/\d/.test(name)) {
         alert("Name should not contain any numbers.")
+        return;
+    }
+
+    if(contact.length != 10) {
+        alert("Contact number should contain only 10 numbers");
         return;
     }
 
@@ -45,7 +50,7 @@ form.addEventListener("submit", function(e) {
     form.reset(); // reset the form after submission without reloading the web page.
 });
 
-// function for add the students in a row
+// function for adding the students in a row.
 function addStudent(key, name, gender, studentID, studentClass, rollNo, contact, email) {
     const newRow = table.insertRow(); // create a new row.
 
@@ -109,12 +114,35 @@ function editStudent(row, key) {
     const contact = prompt("Enter new Contact", cells[5].innerText);
     const email = prompt("Enter new Email", cells[6].innerText);
     
-    // validate if there are any digits in the name.
+    // validation checks.
     if(/\d/.test(name)) {
         alert("Name should not contain any numbers.")
         return;
     }
-    
+
+    if(!["Male", "Female"].includes(gender)) {
+        alert("Gender should either 'Male' or 'Female'.");
+        return;
+    }
+
+    if(/[a-zA-Z]/.test(studentID)) {
+        alert("Student ID should contain only numbers.");
+        return;
+    }
+
+    if(/[a-zA-Z]/.test(contact)) {
+        alert("Contact number should be 10-digit numeric only.");
+        return;
+    } else if(contact.length !== 10) {
+        alert("Contact number should be 10-digit numeric only.");
+        return;
+    }
+
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        alert("Please enter a valid email address.");
+        return;
+    }
+
     // To make sure cells are not is empty.
     if(name && gender && studentID && studentClass && rollNo && contact && email) {
         cells[0].innerText = name;
